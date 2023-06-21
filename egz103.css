@@ -1,0 +1,52 @@
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 70px;
+}
+h3 {
+    position:absolute;
+    margin: 150px;
+    margin-left: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 70px;
+    color: darkmagenta;
+    border: solid;
+    background-color: azure;
+    text-align: center;
+}
+.cell {
+    border-width: 2px;
+    border-color: black;
+    border-style: double;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 80px;
+    font-weight: 900;
+    color: black;
+    text-align: center;
+}
+.cell:hover {
+    box-shadow: 2px 6px 9px palevioletred;
+}
+.container {
+    display: grid;
+    margin-top: 60px;
+    align-content: start;
+    justify-content: center;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    gap: 6px;
+}
+button {
+    position:absolute;
+    margin-top: 350px;
+    margin-left: 590px;
+    width: 80px;
+    height: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    
+}
