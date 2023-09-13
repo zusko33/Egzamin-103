@@ -26,13 +26,9 @@ function cellClick(){
     }
     newCell(this,cellIndex);
     checkWinner();
-    //if (!options.includes("")){
-      //  return;
-    //}
     computerMove();
     checkWinner();
     switchPlayers();
-    //checkWinner();
 }
 
 function newCell(cell, index){
@@ -105,9 +101,16 @@ function creatButton(){
 }
 
 function restartGame() {
-        cells.forEach((cell) => cell.innerText = "");
-        document.getElementById("wonMessage" || "remMessage").remove();
-        document.getElementById("reButton").remove();
-        player = "X";
-        options = ["", "", "", "", "", "", "", "", ""];
+    cells.forEach((cell) => cell.innerText = "");
+    const wonMessage = document.getElementById("wonMessage");
+    if (wonMessage) {
+        wonMessage.remove();
+    }
+    const remMessage = document.getElementById("remMessage");
+    if (remMessage) {
+        remMessage.remove();
+    }
+    document.getElementById("reButton").remove();
+    player = "X";
+    options = ["", "", "", "", "", "", "", "", ""];
 }
