@@ -1,22 +1,20 @@
 // game.js 
 
 class Renderer {
-    cells = [...Array(9).keys()].map((el) => this.createCell(el));
-    board = document.createElement('div');
-    setOnClick(onClick){
-        this.onClick = onClick; 
-    }
-    
-    prepareGameboard(){
-        this.cells.forEach((e) => board.appendChild(e));
-        document.getElementById('board').appendChild(this.board);
+    prepareGameboard(onClick){
+        const board = document.createElement('div');
+        board.classList.add('container');
+        const cells = [...Array(9).keys()].map((el) => this.createCell(el, onClick));
+        
+        cells.forEach((e) => board.appendChild(e));
+        document.getElementById('container').appendChild(board);
     }
 
-    createCell(){
+    createCell(id, onClick){
         const cell = document.createElement("div");
         cell.classList.add("cell");
-        console.log(this.onClick);
-        cell.addEventListener("click", this.onClick)
+        cell.setAttribute('data-index', id);
+        cell.addEventListener("click", onClick)
 
         return cell;
     }
@@ -40,16 +38,12 @@ class Game {
     constructor(engine, renderer){
         this.engine = engine;
         this.renderer = renderer;
-        renderer.setOnClick(this.getMove());
     }
     start(){
-        this.renderer.prepareGameboard();
-    }
-    getMove(){
-        return () => this.move();
+        this.renderer.prepareGameboard(this.move);
     }
     move(){
-        console.log('elo');
+        console.log('move w klasie GAME');
         // uzytkownik
         // wykonaj ruch uzytkownika
         // engine.move(player);
@@ -84,4 +78,6 @@ function app(){
     game.start();
 }
 
-app();
+window.addEventListener('load', function () {
+    app();
+  })
