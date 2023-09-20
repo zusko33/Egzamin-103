@@ -36,14 +36,19 @@ class TicTacToeEngine {
 
 class Game {
     constructor(engine, renderer){
+        this.gameResult = "bla";
         this.engine = engine;
-        this.renderer = renderer;
+        this.renderer = renderer; 
     }
     start(){
         this.renderer.prepareGameboard(this.move);
+        console.log(this.getResult())
     }
-    move(){
-        console.log('move w klasie GAME');
+    getResult(){
+        return this.gameResult;
+    }
+    move(e){
+        e.target.innerText = "X";
         // uzytkownik
         // wykonaj ruch uzytkownika
         // engine.move(player);
@@ -66,9 +71,6 @@ class Game {
         // na potem -> blokada ruchu po zakonczeonej grze?
         // renderer.blockUi
     }
-    gameResult = null;
-    player = 'X';
-    computer = 'O'
 };
 
 function app(){
